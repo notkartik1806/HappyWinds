@@ -27,22 +27,6 @@ const About = () => {
                     </motion.p>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    style={{ borderTop: '1px solid var(--color-border)', paddingTop: '4rem' }}
-                >
-                    <h4 style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-secondary)', marginBottom: '3rem', textAlign: 'center' }}>Trusted by companies worldwide</h4>
-
-                    {/* Client Logos Grid - Using placeholders */}
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', justifyItems: 'center', gap: '3rem', opacity: 0.8 }}>
-                        {[1, 2, 3, 4, 5, 6].map((i) => (
-                            <div key={i} style={{ width: '120px', height: '40px', background: 'var(--color-bg-secondary)', borderRadius: '4px' }}></div>
-                        ))}
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

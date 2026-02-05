@@ -39,14 +39,41 @@ const Hero = () => {
                     </h1>
                 </motion.div>
 
+
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    style={{ borderLeft: '2px solid var(--color-text-primary)', paddingLeft: '2rem', maxWidth: '600px', marginBottom: '3rem' }}
+                    style={{
+                        borderLeft: '2px solid var(--color-text-primary)',
+                        paddingLeft: '2rem',
+                        maxWidth: '800px',
+                        marginBottom: '2rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '1rem'
+                    }}
                 >
-                    <p style={{ fontSize: '1.25rem', fontWeight: 300, color: 'var(--color-text-secondary)' }}>
-                        We are a team of passionate graphic designers and sketch artists. Drafting the best logo is not just a project for us, but an opportunity to add tremendous value to the brand of our clients.
+                    <ul style={{
+                        fontSize: '1.25rem',
+                        fontWeight: 300,
+                        color: 'var(--color-text-secondary)',
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: 0,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.75rem'
+                    }}>
+                        <li>✦ Custom logo identities crafted by a design focused studio.</li>
+                        <li>✦ Fast turnaround with a clear and structured process.</li>
+                        <li>✦ Thoughtful concepts backed by real brand thinking.</li>
+                        <li>✦ Designed for clarity, recognition and long term use.</li>
+                        <li>✦ Trusted by brands that value craft and consistency.</li>
+                    </ul>
+
+                    <p style={{ fontSize: '0.9rem', fontWeight: 300, color: 'var(--color-text-muted)', margin: 0 }}>
+                        <strong style={{ color: 'var(--color-text-primary)' }}>Note:</strong> 80% project payment is required to begin. The remaining 20% is paid after final delivery.
                     </p>
                 </motion.div>
 

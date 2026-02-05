@@ -81,7 +81,7 @@ const Footer = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.9rem', opacity: 1 }}>
                             <p style={{ color: 'inherit' }}>
                                 <strong style={{ opacity: 1, color: 'inherit' }}>Design Charges:</strong><br />
-                                50% advance payment required to start. Remaining 50% due upon completion.
+                                80% advance payment required to start. Remaining 20% due upon completion.
                             </p>
                             <p style={{ color: 'inherit' }}>
                                 <strong style={{ opacity: 1, color: 'inherit' }}>Source Files:</strong><br />
@@ -110,10 +110,10 @@ const Footer = () => {
                         flexWrap: 'wrap',
                         gap: '1rem',
                         fontSize: '0.85rem',
-                        opacity: 0.8
+                        opacity: 1
                     }}>
-                        <div>&copy; {currentYear} Happy Winds. All rights reserved.</div>
-                        <div>Designed by DOT.</div>
+                        <div>&copy; {currentYear} Happywinds. All rights reserved.</div>
+                        <a href="https://dot-site.vercel.app" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}>Designed by DOT.</a>
                     </div>
                 </div>
             </div>

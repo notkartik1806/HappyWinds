@@ -11,12 +11,14 @@ import FAQs from './components/FAQs';
 import Resources from './components/Resources';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import InteractiveGrid from './components/InteractiveGrid';
+import InteractiveParticles from './components/InteractiveParticles';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <div className="app">
-      <InteractiveGrid />
+      <CustomCursor />
+      <InteractiveParticles />
       <Navbar />
       <Hero />
       <About />
