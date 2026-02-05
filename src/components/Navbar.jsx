@@ -189,10 +189,37 @@ const Navbar = () => {
 
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            style={{ color: 'var(--color-text-primary)', zIndex: 102 }}
+                            style={{
+                                color: 'var(--color-text-primary)',
+                                zIndex: 102,
+                                width: '30px',
+                                height: '30px',
+                                position: 'relative',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer'
+                            }}
                         >
-                            <div style={{ width: 22, height: 1.5, background: 'currentColor', marginBottom: 5 }}></div>
-                            <div style={{ width: 14, height: 1.5, background: 'currentColor', marginLeft: 'auto' }}></div>
+                            <motion.div
+                                animate={{
+                                    rotate: isMobileMenuOpen ? 45 : 0,
+                                    y: isMobileMenuOpen ? 3 : 0,
+                                    width: 22
+                                }}
+                                style={{ height: 2, background: 'currentColor', marginBottom: isMobileMenuOpen ? 0 : 5, borderRadius: 2 }}
+                            />
+                            <motion.div
+                                animate={{
+                                    rotate: isMobileMenuOpen ? -45 : 0,
+                                    y: isMobileMenuOpen ? -3 : 0,
+                                    width: isMobileMenuOpen ? 22 : 14
+                                }}
+                                style={{ height: 2, background: 'currentColor', marginLeft: isMobileMenuOpen ? 0 : 'auto', borderRadius: 2 }}
+                            />
                         </button>
                     </div>
                 </div>
