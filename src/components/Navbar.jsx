@@ -132,26 +132,28 @@ const Navbar = () => {
                             <button
                                 onClick={toggleTheme}
                                 style={{
-                                    width: '56px',
-                                    height: '22px',
+                                    width: '44px',
+                                    height: '24px',
                                     background: 'var(--color-text-primary)',
-                                    borderRadius: '999px',
+                                    borderRadius: '100px',
                                     position: 'relative',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    padding: '2px',
-                                    cursor: 'pointer'
+                                    padding: '3px',
+                                    cursor: 'pointer',
+                                    border: 'none',
+                                    outline: 'none'
                                 }}
                             >
                                 <motion.div
                                     style={{
-                                        width: '26px',
+                                        width: '18px',
                                         height: '18px',
                                         background: 'var(--color-bg-primary)',
-                                        borderRadius: '999px',
+                                        borderRadius: '50%',
                                     }}
-                                    animate={{ x: theme === 'dark' ? 26 : 0 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                    animate={{ x: theme === 'dark' ? 20 : 0 }}
+                                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                 />
                             </button>
 
@@ -166,19 +168,22 @@ const Navbar = () => {
                         <button
                             onClick={toggleTheme}
                             style={{
-                                width: '48px',
-                                height: '20px',
+                                width: '44px',
+                                height: '24px',
                                 background: 'var(--color-text-primary)',
-                                borderRadius: '999px',
+                                borderRadius: '100px',
                                 position: 'relative',
                                 display: 'flex',
                                 alignItems: 'center',
-                                padding: '2px'
+                                padding: '3px',
+                                border: 'none',
+                                outline: 'none'
                             }}
                         >
                             <motion.div
-                                style={{ width: '22px', height: '16px', background: 'var(--color-bg-primary)', borderRadius: '999px' }}
-                                animate={{ x: theme === 'dark' ? 22 : 0 }}
+                                style={{ width: '18px', height: '18px', background: 'var(--color-bg-primary)', borderRadius: '50%' }}
+                                animate={{ x: theme === 'dark' ? 20 : 0 }}
+                                transition={{ type: "spring", stiffness: 500, damping: 30 }}
                             />
                         </button>
 
