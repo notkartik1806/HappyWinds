@@ -69,10 +69,10 @@ const Navbar = () => {
                     left: 0,
                     right: 0,
                     padding: isScrolled ? '1rem 0' : '1.5rem 0',
-                    zIndex: isMobileMenuOpen ? 110 : 100,
-                    background: isScrolled || isMobileMenuOpen ? 'var(--color-bg-primary)' : 'transparent',
-                    backdropFilter: isScrolled || isMobileMenuOpen ? 'blur(12px)' : 'none',
-                    borderBottom: (isScrolled || isMobileMenuOpen) ? '1px solid var(--color-border)' : '1px solid transparent',
+                    zIndex: 100,
+                    background: isScrolled ? 'var(--color-bg-primary)' : 'transparent',
+                    backdropFilter: isScrolled ? 'blur(12px)' : 'none',
+                    borderBottom: isScrolled ? '1px solid var(--color-border)' : '1px solid transparent',
                     transition: 'background 0.3s ease, border-color 0.3s ease, padding 0.3s ease'
                 }}
                 initial={{ y: -100 }}
@@ -189,37 +189,10 @@ const Navbar = () => {
 
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            style={{
-                                color: 'var(--color-text-primary)',
-                                zIndex: 102,
-                                width: '30px',
-                                height: '30px',
-                                position: 'relative',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                background: 'none',
-                                border: 'none',
-                                cursor: 'pointer'
-                            }}
+                            style={{ color: 'var(--color-text-primary)', zIndex: 102 }}
                         >
-                            <motion.div
-                                animate={{
-                                    rotate: isMobileMenuOpen ? 45 : 0,
-                                    y: isMobileMenuOpen ? 3 : 0,
-                                    width: 22
-                                }}
-                                style={{ height: 2, background: 'currentColor', marginBottom: isMobileMenuOpen ? 0 : 5, borderRadius: 2 }}
-                            />
-                            <motion.div
-                                animate={{
-                                    rotate: isMobileMenuOpen ? -45 : 0,
-                                    y: isMobileMenuOpen ? -3 : 0,
-                                    width: isMobileMenuOpen ? 22 : 14
-                                }}
-                                style={{ height: 2, background: 'currentColor', marginLeft: isMobileMenuOpen ? 0 : 'auto', borderRadius: 2 }}
-                            />
+                            <div style={{ width: 22, height: 1.5, background: 'currentColor', marginBottom: 5 }}></div>
+                            <div style={{ width: 14, height: 1.5, background: 'currentColor', marginLeft: 'auto' }}></div>
                         </button>
                     </div>
                 </div>
