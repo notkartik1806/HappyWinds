@@ -1,0 +1,124 @@
+import React from 'react';
+
+const Footer = () => {
+    const currentYear = new Date().getFullYear();
+    const [theme, setTheme] = React.useState('light');
+
+    React.useEffect(() => {
+        const checkTheme = () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            setTheme(currentTheme);
+        };
+
+        checkTheme();
+
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'data-theme') {
+                    checkTheme();
+                }
+            });
+        });
+
+        observer.observe(document.documentElement, { attributes: true });
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <footer style={{
+            padding: '5rem 0 2rem',
+            background: 'var(--color-text-primary)',
+            color: 'var(--color-bg-primary)',
+            borderTop: '1px solid var(--color-border)'
+        }}>
+            <div className="container">
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                    gap: '4rem',
+                    marginBottom: '4rem'
+                }}>
+                    {/* Brand Section */}
+                    <div style={{ maxWidth: '400px' }}>
+                        <div style={{ marginBottom: '1.5rem' }}>
+                            <img
+                                src="/logo.svg"
+                                alt="Happy Winds"
+                                style={{
+                                    height: '60px',
+                                    width: 'auto',
+                                    filter: theme === 'dark' ? 'invert(1)' : 'none',
+                                    transition: 'filter 0.3s ease'
+                                }}
+                            />
+                        </div>
+                        <p style={{ color: 'inherit', opacity: 0.9, lineHeight: 1.7, fontSize: '1rem' }}>
+                            Drafting the best logo is not just a project for us, but an opportunity to add tremendous value to your brand.
+                        </p>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h4 style={{ color: 'inherit', marginBottom: '1.5rem', fontSize: '1.1rem' }}>Quick Links</h4>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            {['About', 'Process', 'Portfolio', 'Packages', 'Education', 'Reviews'].map(item => (
+                                <a
+                                    key={item}
+                                    href={`#${item.toLowerCase()}`}
+                                    style={{ opacity: 0.85, transition: 'opacity 0.2s' }}
+                                    onMouseEnter={(e) => e.target.style.opacity = '1'}
+                                    onMouseLeave={(e) => e.target.style.opacity = '0.85'}
+                                >
+                                    {item}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Important Info */}
+                    <div>
+                        <h4 style={{ color: 'inherit', marginBottom: '1.5rem', fontSize: '1.1rem' }}>Important</h4>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.9rem', opacity: 1 }}>
+                            <p style={{ color: 'inherit' }}>
+                                <strong style={{ opacity: 1, color: 'inherit' }}>Design Charges:</strong><br />
+                                50% advance payment required to start. Remaining 50% due upon completion.
+                            </p>
+                            <p style={{ color: 'inherit' }}>
+                                <strong style={{ opacity: 1, color: 'inherit' }}>Source Files:</strong><br />
+                                Copyright source files (AI, CDR) released after full payment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Terms & Copyright */}
+                <div style={{
+                    marginTop: '3rem',
+                    paddingTop: '2rem',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.1)'
+                }}>
+                    <div style={{ marginBottom: '1.5rem', fontSize: '0.85rem', opacity: 0.9, lineHeight: 1.6, color: 'inherit' }}>
+                        <strong style={{ opacity: 1, color: 'inherit' }}>Terms & Conditions:</strong><br />
+                        Copyright is retained by Happywinds Logo until all costs are settled. Unchosen designs remain property of Happywinds.
+                        Payments outstanding for 30 days incur interest. All charges exclusive of GST (18%).
+                    </div>
+
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        flexWrap: 'wrap',
+                        gap: '1rem',
+                        fontSize: '0.85rem',
+                        opacity: 0.8
+                    }}>
+                        <div>&copy; {currentYear} Happy Winds. All rights reserved.</div>
+                        <div>Designed by DOT.</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
