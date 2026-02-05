@@ -81,7 +81,7 @@ const Footer = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.9rem', opacity: 1 }}>
                             <p style={{ color: 'inherit' }}>
                                 <strong style={{ opacity: 1, color: 'inherit' }}>Design Charges:</strong><br />
-                                50% advance payment required to start. Remaining 50% due upon completion.
+                                80% advance payment required to start. Remaining 20% due upon completion.
                             </p>
                             <p style={{ color: 'inherit' }}>
                                 <strong style={{ opacity: 1, color: 'inherit' }}>Source Files:</strong><br />
