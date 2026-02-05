@@ -57,10 +57,10 @@ const Hero = () => {
                         borderLeft: '2px solid var(--color-text-primary)',
                         paddingLeft: '2rem',
                         maxWidth: '800px',
-                        marginBottom: '3.5rem',
+                        marginBottom: '2rem',
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: '2.5rem'
+                        gap: '1rem'
                     }}
                 >
                     <ul style={{
