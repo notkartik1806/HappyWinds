@@ -110,10 +110,10 @@ const Footer = () => {
                         flexWrap: 'wrap',
                         gap: '1rem',
                         fontSize: '0.85rem',
-                        opacity: 0.8
+                        opacity: 1
                     }}>
-                        <div>&copy; {currentYear} Happy Winds. All rights reserved.</div>
-                        <div>Designed by DOT.</div>
+                        <div>&copy; {currentYear} Happywinds. All rights reserved.</div>
+                        <a href="https://dot-site.vercel.app" target="_blank" style={{ color: 'inherit', textDecoration: 'none' }}>Designed by DOT.</a>
                     </div>
                 </div>
             </div>
