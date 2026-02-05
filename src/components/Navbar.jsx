@@ -69,10 +69,10 @@ const Navbar = () => {
                     left: 0,
                     right: 0,
                     padding: isScrolled ? '1rem 0' : '1.5rem 0',
-                    zIndex: 100,
-                    background: isScrolled ? 'var(--color-bg-primary)' : 'transparent',
-                    backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-                    borderBottom: isScrolled ? '1px solid var(--color-border)' : '1px solid transparent',
+                    zIndex: isMobileMenuOpen ? 110 : 100,
+                    background: isScrolled || isMobileMenuOpen ? 'var(--color-bg-primary)' : 'transparent',
+                    backdropFilter: isScrolled || isMobileMenuOpen ? 'blur(12px)' : 'none',
+                    borderBottom: (isScrolled || isMobileMenuOpen) ? '1px solid var(--color-border)' : '1px solid transparent',
                     transition: 'background 0.3s ease, border-color 0.3s ease, padding 0.3s ease'
                 }}
                 initial={{ y: -100 }}
